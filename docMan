@@ -23,5 +23,7 @@ Kerberos 身份认证协议
    TGT: Ticket granting Ticket   是KDC提供的重新获取TGS的票据，它是用KDC密钥加密的。
    特区属性证书 PAC
    PAC 是一种包含在几乎所有票据中的结构，此结构包含用户的权限，并使用KDC的密钥进行签名(准确来说是MAC校验)
+   服务可以通过KDC通信来验证PAC，PAC验证包括仅检查其签名，而不检查PAC内部的权限是否正确。
+   另外客户端可以通过在票据请求的kerb-pac-request字段中指定PAC
    
    

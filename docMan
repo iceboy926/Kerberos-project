@@ -32,5 +32,13 @@ Kerberos 身份认证协议
    PAC 是一种包含在几乎所有票据中的结构，此结构包含用户的权限，并使用KDC的密钥进行签名(准确来说是MAC校验)
    服务可以通过KDC通信来验证PAC，PAC验证包括仅检查其签名，而不检查PAC内部的权限是否正确。
    另外客户端可以通过在票据请求的kerb-pac-request字段中指定PAC
-   
+   消息
+   Kerberos 使用了不同种类的消息：
+   KRB_AS_REQ: 用于向KDC请求TGT
+   KRB_AS_REP: 用于从KDC响应TGT
+   KRB_TGS_REQ: 用于使用TGT向KDC请求TGS
+   KRB_TGS_REP: 用于从KDC响应TGS
+   KRB_AP_REQ: 使用TGS针对某个服务对用户进行身份验证。
+   KRB_AP_REP: 可选，由服务针对用户标识自己。
+   KRB_ERROR: 通信错误情况下的消息
    

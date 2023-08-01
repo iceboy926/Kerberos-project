@@ -41,4 +41,10 @@ Kerberos 身份认证协议
    KRB_AP_REQ: 使用TGS针对某个服务对用户进行身份验证。
    KRB_AP_REP: 可选，由服务针对用户标识自己。
    KRB_ERROR: 通信错误情况下的消息
-   
+   认证流程
+   在本章中，将研究执行身份认证的消息队列，从没有票据的用户到被所需服务完成身份认证的流程。
+   (1)、KRB_AS_REQ
+   首先，用户必须从KDC获取TGT，因此必须发送KRB_AS_REQ，包含的主要数据包括：
+   Timestamp 
+   Username
+   SPN krbtgt

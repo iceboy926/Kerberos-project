@@ -17,6 +17,11 @@ Kerberos 身份认证协议
    (1)、客户端或者用户
    (2)、提供用户所需服务的应用服务器AP
    (3)、KDC(密钥分发中心)：Kerberos的主要服务，负责发行票据，它安装在DC(域控制器上)，它由AS（身份验证服务）和TGS (票据授权服务) 组成。
+   密钥类型
+   KDC key或者krbtgt key, 它是从krbtgt 账户NTLM散列导出的密钥，其中krbtgt是一个默认账户，存在于Active Directory 的所有域中，其目的是
+充当控制器KDC服务账户。
+   用户密钥，它是从用户NTLM散列派生出来的
+
    票据 Ticket
    kerberos 处理的主要结构是票据，这些票证被传递给用户，以便用户使用这些票证在Kerberos 中执行多个操作，票据主要由两种类型：
    TGS: Ticket granting Service  是用户用来验证服务的票据，它是用服务器密钥加密的。

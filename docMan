@@ -48,3 +48,4 @@ Kerberos 身份认证协议
    Timestamp 
    Username
    SPN krbtgt
+   Usernonce

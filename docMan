@@ -45,7 +45,14 @@ Kerberos 身份认证协议
    在本章中，将研究执行身份认证的消息队列，从没有票据的用户到被所需服务完成身份认证的流程。
    (1)、KRB_AS_REQ
    首先，用户必须从KDC获取TGT，因此必须发送KRB_AS_REQ，包含的主要数据包括：
-   Timestamp 
-   Username
-   SPN krbtgt
-   Usernonce
+                       
+                    ____________
+                   |  Timestamp |
+                   |  Username  |
+       User   =>   |  SPN krbtgt|    =>  KDC
+                   |  Usernonce |
+                    _____________ 
+    使用客户端密钥加密的时间戳，用于验证用户身份并防止重放攻击。
+    认证的用户名。
+    与krbtgt账户关联的服务SPN
+    用户产生的随机nonce

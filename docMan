@@ -58,11 +58,17 @@ Kerberos 身份认证协议
     用户产生的随机nonce
     (2)、KRB_AS_REP
     在接收到请求后，KDC通过解密时间戳验证用户身份，如果消息正确，则KDC必须以KRB_AS_REP进行响应:
-                    ______________________________________               
-                   |   Username        _________________   |
+                    _______________________________________               
+                   |   Username        _______TGT data_    |
               |<=  |  ______________   |  Username     |   |
               |    | | SessionKey   |  | SessionKey    |   |
      User <=  |    | |TGT expiraTime|  | TGT expiraTime|   |      <=== KDC 
               |<=  | |User nonce    |  |__PAC__________|   |
                    |    User hash      |__krbtgt_hash__|   | 
                    |_______________________________________|
+    KDC 返回的数据包括：
+     认证的用户名
+     TGT数据
+     使用Userkey 加密的数据
+
+

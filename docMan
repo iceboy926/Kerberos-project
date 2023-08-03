@@ -62,7 +62,7 @@ Kerberos 身份认证协议
                    |   Username        _________________   |
               |<=  |  ______________   |  Username     |   |
               |    | | SessionKey   |  | SessionKey    |   |
-     User <=  |    | |TGT expiraTime|  | TGT expiraTime|   |
+     User <=  |    | |TGT expiraTime|  | TGT expiraTime|   |      <=== KDC 
               |<=  | |User nonce    |  |__PAC__________|   |
                    |    User hash      |__krbtgt_hash__|   | 
                    |_______________________________________|

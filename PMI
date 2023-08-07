@@ -12,10 +12,13 @@ PMI主要进行授权管理，证明用户有什么权限、能干什么，PKI�
      SOA的主要职责是授权策略的管理、应用授权受理、AA的设立审核及管理等
 
      (2) 属性权威机构
+     属性权威机构（Attribute Authority，AA）是PMI的核心服务节点，是对应于具体应用系统的授权管理系统，由各应用部门管理，SOA授予它管理一部分或全部属性的权力
 
      (3) 属性注册权威机构
+     属性注册权威机构（Attribute Registration Authority，ARA）和RA的位置类似，ARA是AA的延伸，主要提供AC注册、审核及分发。
 
      (4) 用户
+     用户也称特权持有者，指使用AC的终端实体
 
      (5) 证书库
-
+     证书库用于发布PMI用户的AC以及AC撤销列表（Attribute Certificate Revocation List，ACRL），以供查询

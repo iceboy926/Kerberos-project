@@ -72,6 +72,21 @@ Kerberos 身份认证协议
        使用Userkey 加密的数据包括 Session key , TGT expire Time , User nonce
     客户端接收到以上信息后，可以使用TGT请求TGS，然后访问服务。
     (3)、KRB_TGS_REQ
-     为了请求TGS，User必须向KDC发送KRB_TGS_REQ请求数据
-     
+     为了请求TGS，User必须向KDC发送KRB_TGS_REQ请求数据：
+                     _________________________________________________
+                     |             | Username     |                  |
+                     |             | Timestamp    |                  |
+                     |             |__sessionkey__|                  |
+                     |             ________________                  |
+                     |             |    TGT       |                  |
+       User  ===>>   |             |__krbtgt_hash_|                  |   ======>KDC
+                     |             ________________                  |
+                     |             |     SPN      |                  |
+                     |             |   Usernonce  |                  |
+                     |_______________________________________________|
 
+      包括以下数据：
+         使用 sessionkey 加密的数据信息：E(Username||Timestamp)
+         使用krbtgt_hash加密的TGT数据
+         请求服务的SPN
+         用户的随机值usernonce

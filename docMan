@@ -92,3 +92,4 @@ Kerberos 身份认证协议
          用户的随机值usernonce
     (4)、KRB_TGS_REP
         当KDC接收到User的KRB_TGS_REQ的请求后，必须给User 返回KRB_TGS_REP内部的TGS
+        

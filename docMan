@@ -101,4 +101,8 @@ Kerberos 身份认证协议
                      |    |       Usernonce       |  |___service owner hash_|  |
                      |    |____session key________|                            |
                      |_________________________________________________________|
-                      
+
+       KRB_TGS_REP 里面的数据包括：
+         Username 用户名
+         TGS数据包括：Server session key、 Username、 TGT expiration time、 PAC
+         使用session key 加密的数据：Server session key、 TGS expiration time、Usernonce               

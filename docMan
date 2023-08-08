@@ -91,5 +91,14 @@ Kerberos 身份认证协议
          请求服务的SPN
          用户的随机值usernonce
     (4)、KRB_TGS_REP
-        当KDC接收到User的KRB_TGS_REQ的请求后，必须给User 返回KRB_TGS_REP内部的TGS
-        
+        当KDC接收到User的KRB_TGS_REQ的请求后，必须给User返回KRB_TGS_REP内部的TGS,如下所示：
+                     __________________________________________________________
+                     |                               __________TGS__________   |
+                     |      Username                 | Server session key   |  | 
+                     |     ________________________  |     Username         |  |
+        User  <<==== |    |   Server session key  |  |  TGS expiration time |  |  <======= KDC
+                     |    |  TGS  expiration key  |  |     PAC              |  |
+                     |    |       Usernonce       |  |___service owner hash_|  |
+                     |    |____session key________|                            |
+                     |_________________________________________________________|
+                      

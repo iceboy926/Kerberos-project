@@ -106,3 +106,10 @@ Kerberos 身份认证协议
          Username 用户名
          TGS数据包括：Server session key、 Username、 TGT expiration time、 PAC
          使用session key 加密的数据：Server session key、 TGS expiration time、Usernonce               
+    (5)、KRB_AP_REQ
+         最后，如果一切顺利，那么用户已经有一个有效的TGS数据与应用服务器交互，为了使用它，用户必须发送请求应用服务器一个
+    KRB_AP_REQ 请求。
+                   |
+                   |
+                   |
+       User ======>
